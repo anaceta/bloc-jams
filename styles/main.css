@@ -2,21 +2,21 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-} 
+}
 html {
-     height: 100%;
-     font-size: 100%;
- }
- 
- body {
-     font-family: 'Open Sans';
-     color: white;
-     min-height: 100%;
- }
- 
- body.landing {
-     background-color: rgb(58,23,63);
- }
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Open Sans';
+    color: white;
+    min-height: 100%;
+}
+
+body.landing {
+    background-color: rgb(58,23,63);
+}
 
 .navbar {
     position: relative;
@@ -45,21 +45,21 @@ html {
 }
 
 .links-container .navbar-link {
-    display: table-cell;
-    position: relative;
-    height: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    /* #4 */
-    vertical-align: middle;
-    color: white;
-    font-size: 0.625rem;
-    letter-spacing: 0.05rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    /* #3 */
-    text-decoration: none;
-    cursor: pointer;
+   display: table-cell;
+   position: relative;
+   height: 100%;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   /* #4 */
+   vertical-align: middle;
+   color: white;
+   font-size: 0.625rem;
+   letter-spacing: 0.05rem;
+   font-weight: 700;
+   text-transform: uppercase;
+   /* #3 */
+   text-decoration: none;
+   cursor: pointer;
 }
 
 /* #5 */
@@ -124,6 +124,10 @@ html {
 .container {
     margin: 0 auto;
     max-width 64rem;
+}
+
+.container.narrow {
+    max-width: 56rem;
 }
 
 @media (min-width: 640px) {
