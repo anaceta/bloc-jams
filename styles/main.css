@@ -22,7 +22,7 @@ body {
     z-index: 1;
 }
 
-.navbar > .logo {
+.navbar .logo {
     position: relative;
     left: 2rem;
     cursor: pointer;
