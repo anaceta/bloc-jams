@@ -4,29 +4,19 @@
     box-sizing: border-box;
 }
 html {
-<<<<<<< HEAD
      height: 100%;
      font-size: 100%;
  }
- 
-=======
-    height: 100%;
-    font-size: 100%;
-}
 
->>>>>>> 2f3ad3817fde8f2e96a04ced514831d47890d8f8
 body {
     font-family: 'Open Sans';
     color: white;
     min-height: 100%;
 }
-<<<<<<< HEAD
-=======
 
 body.landing {
     background-color: rgb(58,23,63);
 }
->>>>>>> 2f3ad3817fde8f2e96a04ced514831d47890d8f8
 
 .navbar {
     position: relative;
