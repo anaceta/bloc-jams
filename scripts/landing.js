@@ -8,9 +8,15 @@ var animatePoints = function (points) {
         points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
     };
     
-    for (var i = 0; i < points.length; i++) {
-       revealPoint(i);
+    function forEach (points) {
+    for (var i = 0; i <= points.length; i++) {
+        return revealPoint(i);
     }
+}
+
+    //for (var i = 0; i < points.length; i++) {
+       //revealPoint(i);
+    //}
 };
 
 window.onload = function() {
