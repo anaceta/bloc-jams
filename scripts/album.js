@@ -45,7 +45,7 @@ var albumNumbers = {
 
 var createSongRow = function (songNumber, songName, songLength) {
     var template =
-            '<tr class="album-view-song-item">'
+              '<tr class="album-view-song-item">'
             + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
             + '  <td class="song-item-title">' + songName + '</td>'
             + '  <td class="song-item-duration">' + songLength + '</td>'
@@ -76,20 +76,40 @@ var setCurrentAlbum = function (album) {
 };
 
 var findParentByClassName = function (element, targetClass) {
-    if (element) {
-        var currentParent = element.parentElement;
-        while (currentParent.className != targetClass && currentParent.className !== null) {
+    var currentParent = element.parentElement;
+
+    if (currentParent) {
+        while (currentParent.className && currentParent.className != targetClass) {
             currentParent = currentParent.parentElement;
-        } else if {
-            currentParent === null;
-                console.log("No parent found");
-        } else {
-            currentParent.className === null;
-                console.log("No parent found with that class name");
         }
-        return currentParent;
+        if (currentParent.className === targetClass) {
+            return currentParent;
+        } else {
+            console.log("No parent found with that class name.");
+        }
+    } else {
+        console.log("No parent found.");
     }
 };
+
+/* Attempt #1
+   if (element) {
+        if (element.parentElement === null) {
+            console.log("No parent found");
+        } else {
+            var currentParent = element.parentElement;
+            while (currentParent.className != targetClass && currentParent.className !== null) {
+                currentParent = currentParent.parentElement;
+            }
+        if (currentParent.className === null) {
+            console.log("No parent found with that class name");
+            } else
+                return currentParent;
+        }
+    }
+};
+*/
+
 
 var getSongItem = function (element) {
     switch (element.className) {
@@ -110,7 +130,6 @@ var getSongItem = function (element) {
 };
 
 var clickHandler = function (targetElement) {
-
     var songItem = getSongItem(targetElement);
 
     if (currentlyPlayingSong === null) {
@@ -140,9 +159,7 @@ window.onload = function () {
 
     songListContainer.addEventListener('mouseover', function (event) {
         if (event.target.parentElement.className === 'album-view-song-item') {
-            event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
             var songItem = getSongItem(event.target);
-
             if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
                 songItem.innerHTML = playButtonTemplate;
             }
