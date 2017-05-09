@@ -84,12 +84,28 @@ var findParentByClassName = function (element, targetClass) {
             while (currentParent.className !== targetClass && currentParent.className !== null) {
                 currentParent = currentParent.parentElement;
             }
-        if (currentParent.className === null) {
-            console.log("No parent found with that class name");
-            } else
+            if (currentParent.className === null) {
+                console.log("No parent found with that class name");
+            } else {
                 return currentParent;
+            }
         }
     }
+};
+
+var findParentByClassName = function (element, targetClass) {
+if (element && element.parentElement) {
+    var currentParent = element.parentElement;
+    while (currentParent.className !== targetClass && currentParent.className !== null) {
+        currentParent = currentParent.parentElement;
+    }
+    if (currentParent.className === null) {
+        console.log("No parent found with that class name");
+    }
+    return currentParent;
+} else if (element.parentElement === null) {
+    console.log("No parent found");
+}
 };
 
 var getSongItem = function (element) {
