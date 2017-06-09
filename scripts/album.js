@@ -65,9 +65,9 @@ var createSongRow = function (songNumber, songName, songLength) {
             currentlyPlayingSong = null;
         } else if (currentlyPlayingSong !== songItemNumber) {
             var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
-            currentlyPlayingCell.innerHTML = currentlyPlayingCell.attr('data-song-number');
             currentlyPlayingCell.html(currentlyPlayingSong);
             $(this).html(pauseButtonTemplate);
+            currentlyPlayingSong = songItemNumber;
         }
     };
 
