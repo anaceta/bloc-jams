@@ -45,12 +45,12 @@ var createSongRow = function (songNumber, songName, songLength) {
 
     var offHover = function(event) {
         var songItem = $(this).find('.song-item-number');
-        var songItemNumber = parseInt(  songItem.attr('data-song-number'));
+        var songItemNumber = parseInt(songItem.attr('data-song-number'));
 
         if (songItemNumber !== currentlyPlayingSongNumber) {
             songItem.html(songItemNumber);
         }
-        console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);
+        // console.log("songNumber type is " + typeof songNumber + "\n and currentlyPlayingSongNumber type is " + typeof currentlyPlayingSongNumber);
     };
 
     $row.find('.song-item-number').click(clickHandler);
